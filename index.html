@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dheeraj Bansal | Portfolio</title>
+<style>
+/* Reset */
+* { box-sizing: border-box; margin:0; padding:0; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f9f9f9; color:#333; line-height:1.6; scroll-behavior: smooth; }
+
+/* Navbar */
+nav {
+  position: fixed;
+  width: 100%;
+  background: #222;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8em 2em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+nav.sticky { background: #111; }
+nav a {
+  color: #fff;
+  margin: 0 1em;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: #007BFF;
+  transition: width 0.3s;
+}
+nav a:hover::after { width: 100%; }
+nav a:hover { color:#007BFF; }
+nav .logo { font-size: 1.5em; font-weight:700; color:#fff; }
+
+header { text-align: center; padding: 8em 2em 4em; background: url('https://plus.unsplash.com/premium_photo-1686242214702-3dd33be67b9f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxfHx8ZW58MHx8fHx8') center/cover no-repeat; color: #fff; position: relative; }
+
+header::after {
+  content:'';
+  position:absolute;
+  top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.5);
+}
+header h1, header h2 { position: relative; }
+header h1 { font-size:3em; margin-bottom:0.2em; }
+header h2 { font-weight:300; font-size:1.5em; margin-bottom:0.5em; }
+header .scroll-down { margin-top: 1.5em; font-weight:600; font-size:1.1em; color:#ccc; cursor:pointer; animation: bounce 2s infinite; position:relative; }
+@keyframes bounce { 0%,100%{transform:translateY(0);}50%{transform:translateY(10px);} }
+
+/* Sections */
+section { padding:6em 2em; }
+.section-title { text-align:center; margin-bottom:2em; font-size:2em; color:#222; border-bottom:2px solid #007BFF; display:inline-block; padding-bottom:0.3em; }
+.container { width:90%; max-width:1100px; margin:0 auto; }
+
+/* About & Experience */
+.intro, .about, .experience, .abilities, .services, .portfolio, .testimonials, .contact { background:#fff; padding:2em; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.05); transition: transform 0.6s, opacity 0.6s; opacity:0; transform: translateY(50px); }
+.intro.visible, .about.visible, .experience.visible, .abilities.visible, .services.visible, .portfolio.visible, .testimonials.visible, .contact.visible { opacity:1; transform: translateY(0); }
+.experience .years { font-size:3em; font-weight:700; color:#007BFF; text-align:center; margin-bottom:0.5em; }
+.abilities-list, .services-list, .portfolio-items, .testimonials-list { display:flex; justify-content:center; gap:2em; flex-wrap:wrap; }
+.ability, .service, .testimonial, .portfolio-item { background:#f0f8ff; border-radius:8px; padding:1.5em; width:280px; box-shadow:0 0 8px rgba(0,0,0,0.1); text-align:center; transition: transform 0.3s; }
+.ability h3, .service h3, .testimonial h4 { color:#007BFF; margin-bottom:0.8em; }
+.service ul { text-align:left; margin-top:1em; list-style: disc; padding-left:1.2em; }
+.portfolio-item img { max-width:100%; border-radius:6px; margin-bottom:0.8em; }
+.portfolio-item:hover { transform: translateY(-10px) scale(1.05); }
+
+/* Contact */
+.contact form { max-width:600px; margin:0 auto; display:flex; flex-direction:column; gap:1em; }
+.contact input, .contact textarea { padding:0.8em; border:1px solid #ccc; border-radius:6px; font-size:1em; resize:vertical; }
+.contact button { background:#007BFF; color:white; border:none; padding:1em; font-size:1.1em; border-radius:6px; cursor:pointer; font-weight:700; transition: background 0.3s ease; }
+.contact button:hover { background:#0056b3; }
+
+/* Media Queries */
+@media(max-width:768px) { .abilities-list, .services-list, .portfolio-items, .testimonials-list { flex-direction:column; align-items:center; } .ability,.service,.portfolio-item,.testimonial{width:90%;} }
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">Dheeraj Bansal</div>
+    <div class="menu">
+        <a href="#intro">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#abilities">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<header>
+    <h2>Hello, I'm</h2>
+    <h1>Dheeraj Bansal</h1>
+    <h2>Frontend Developer</h2>
+    <div class="scroll-down">Scroll Down ↓</div>
+</header>
+
+<main class="container">
+
+<section class="intro" id="intro">
+    <h2 class="section-title">Introduction</h2>
+    <p>Welcome! I'm Dheeraj, a passionate Frontend Developer crafting engaging and modern web experiences using HTML, CSS, and JavaScript.</p>
+</section>
+
+<section class="about" id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>I create responsive, dynamic, and visually appealing web interfaces. I focus on UI/UX design principles to deliver a seamless user experience.</p>
+</section>
+
+<section class="experience" id="experience">
+    <h2 class="section-title">Experience</h2>
+    <div class="years">3+ Years Working</div>
+    <p>Frontend Developer experienced in real-world projects including Hospitily, Winter Solstice, Express Eats, and Pet Tracker App.</p>
+</section>
+
+<section class="abilities" id="abilities">
+    <h2 class="section-title">My Skills</h2>
+    <div class="abilities-list">
+        <div class="ability"><h3>Frontend Development</h3><p>Expert in HTML, CSS, JS, and responsive designs.</p></div>
+        <div class="ability"><h3>UI/UX Design</h3><p>Designing modern, user-friendly interfaces with best practices.</p></div>
+    </div>
+</section>
+
+<section class="services" id="services">
+    <h2 class="section-title">Services</h2>
+    <div class="services-list">
+        <div class="service"><h3>Web Development</h3><ul><li>Responsive Websites</li><li>Interactive UI/UX</li><li>Performance Optimization</li></ul></div>
+        <div class="service"><h3>UI/UX Design</h3><ul><li>Wireframes & Prototypes</li><li>User Interaction Design</li><li>Visual Design</li></ul></div>
+    </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+    <h2 class="section-title">Portfolio</h2>
+    <div class="portfolio-items">
+        <div class="portfolio-item">
+            <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG9zcGl0YWx8ZW58MHx8MHx8fDA%3D" alt="Hospitily">
+            <h4>Hospitily</h4>
+            <p>Medical Website</p>
+            <a href="https://dheeraj12347.github.io/medical_website/" target="_blank">View Project</a>
+        </div>
+        <div class="portfolio-item">
+            <img src="https://media.istockphoto.com/id/2218598100/photo/woman-uses-navigation-app-on-smartphone-to-control-where-the-dog-is.webp?a=1&b=1&s=612x612&w=0&k=20&c=8duNvv5FcyJVrFTQNMpqA4ROJHOtDdPPpkPsJdvzDnI=" alt="Pet Tracker App">
+            <h4>Pet Tracker App</h4>
+            <p>Pet Care Mobile App</p>
+            <a href="https://github.com/dheeraj12347/pet-activity-tracker" target="_blank">View Project</a>
+        </div>
+        <div class="portfolio-item">
+            <img src="https://plus.unsplash.com/premium_photo-1673108852141-e8c3c22a4a22?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D" alt="Express Eats">
+            <h4>Express Eats</h4>
+            <p>Food Delivery Web App</p>
+            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7347672047579222019/" target="_blank">View Project</a>
+        </div>
+        <div class="portfolio-item">
+            <img src="https://images.unsplash.com/photo-1445543949571-ffc3e0e2f55e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHdpbnRlcnxlbnwwfHwwfHx8MA%3D%3D" alt="Winter Solstice">
+            <h4>Winter Solstice</h4>
+            <p>Winter Solstice Website</p>
+            <a href="https://dheeraj12347.github.io/winter_website/" target="_blank">View Project</a>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Your full name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Your email address" required>
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" placeholder="Write your message..." required></textarea>
+        <button type="submit">Contact Me</button>
+    </form>
+</section>
+
+</main>
+
+<script>
+// Sticky navbar
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if(window.scrollY > 50) nav.classList.add('sticky');
+    else nav.classList.remove('sticky');
+});
+
+// Scroll reveal animations
+const sections = document.querySelectorAll('section');
+const reveal = () => {
+    const triggerBottom = window.innerHeight * 0.85;
+    sections.forEach(sec => {
+        const boxTop = sec.getBoundingClientRect().top;
+        if(boxTop < triggerBottom) sec.classList.add('visible');
+    });
+};
+window.addEventListener('scroll', reveal);
+window.addEventListener('load', reveal);
+</script>
+
+</body>
+</html>
